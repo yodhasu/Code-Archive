@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="assets/AboutUs.css">
+    <script src="assets/validasi-input.js"></script>
+  </head>
+  <body>
+    <nav id="navbar">
+      <div id="logo">
+        <img id="gambarLogo" src="https://images.glints.com/unsafe/glints-dashboard.s3.amazonaws.com/company-logo/54d5cda231fcf15cf3a6bab91a4ede60.png" alt="ALT GAMBAR">
+      </div>
+      <div id="menus">
+        <div class="menuNavbar">
+          <!-- Memberikan peringatan -->
+          <a href="css.html" onclick="alert('Menu dipencet')">
+            Menu 1
+          </a>
+        </div>
+        <div class="menuNavbar">
+          <a href="https://www.google.com" target="_blank">
+            Menu 2
+          </a>
+        </div>
+        <div class="menuNavbar">
+          <a href="">
+            Menu 3
+          </a>
+        </div>
+        <div class="menuNavbar">
+          <a href="">
+            Menu 4
+          </a>
+        </div>
+      </div>
+    </nav>
+    <div id="form">
+      <h1 class="subHeader">CONTACT US</h1>
+      <div id="formContent">
+        <form onsubmit="return validasi()">
+          <div class="formItem">
+            <label for="nama">Nama Lengkap:</label>
+            <input type="text" id="nama" placeholder="Masukkan nama anda...">
+            <span id="err-nama"></span>
+          </div>
+          <div class="formItem">
+            <label for="email">Email:</label>
+            <input type="text" id="email">
+          </div>
+          <!-- <div class="formItem">
+            <label for="lokasi">Lokasi:</label>
+            <select id="lokasi">
+              <option value="Jakarta">Jakarta</option>
+              <option value="Jawa Barat">Jawa Barat</option>
+            </select>
+          </div> -->
+          <div class="formItem">
+            <label class="block">Jenis Kelamin:</label>
+            <input type="radio" name="jenisKelamin" id="Pria" value="Pria">
+            <label for="Pria">Pria</label>
+            <input type="radio" name="jenisKelamin" id="Wanita" value="Wanita">
+            <label for="Wanita">Wanita</label>
+          </div>
+          <div class="formItem">
+            <label for="pesan">Pesan:</label>
+            <textarea id="pesan" cols="30" rows="10"></textarea>
+          </div>
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

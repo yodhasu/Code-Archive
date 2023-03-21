@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Login form with JavaScript Validation</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+  <link rel="stylesheet" href="Register.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+   <script defer src="validate.js"></script> 
+</head>
+<body>
+<div class="wrapper">
+  <div class="inner-warpper text-center">
+    <h2 class="title">Register</h2>
+    <form action="" name="myform" onsubmit="return validate()" id="myform">
+      <div class="input-group"> <!--Name-->
+        <input name="userName" id="userName" type="text" placeholder="Full name"/>
+        <label for="userName">Full name</label>
+        <span class="validate" id="userNameerror"></span>
+      </div>
+      <div class="input-group"> <!--email-->
+        <input class="form-control" name="userEmail" id="userEmail" type="text" placeholder="Email"/>
+        <label class="palceholder" for="userEmail">Email</label>
+        <span class="validate" id="userEmailerror"></span>
+      </div>
+      <div class="text-left"> <!--Gender-->
+        <p>Gender</p>
+        <label class="radio-button palceholder">
+          <input type="radio" class="radio-button__input form-control" id="userGender" name="userGender">
+          <span class="radio-button__control"></span>
+          <span class="radio-button__label">Male</span>
+        </label>
+        <label class="radio-button palceholder">
+          <input type="radio" class="radio-button__input form-control" id="userGender" name="userGender">
+          <span class="radio-button__control"></span>
+          <span class="radio-button__label">Female</span>
+        </label>
+		<span class="validate" id="userGendererror"></span>
+      </div>
+
+      <div class="text-left"> <!--City-->
+        <label class="palceholder" for="userCity">City</label>
+        <br>
+        <br>
+        <select name="userCity" id="userCity">
+            <option value="">Select a city</option>
+            <option value="Jakarta">Jakarta</option>
+            <option value="Bogor">Bogor</option>
+            <option value="Depok">Depok</option>
+            <option value="Tanggerang">Tanggerang</option>
+            <option value="Bekasi">Bekasi</option>
+            <option value="nl">Not listed</option>
+        </select>
+      </div>
+      <div class="input-group"> <!--password-->
+        <input class="form-control" name="userPassword" id="userPassword" type="password" placeholder="Password" />
+        <label class="palceholder" for="userPassword">Password</label>
+        <span class="lighting"></span>
+      </div>
+      <div class="input-group"> <!--confirm password-->
+        <input class="form-control" name="userPassword" id="userPassword" type="password" placeholder="COnfirm password" />
+        <label class="palceholder" for="userPassword">Confirm password</label>
+        <span class="lighting"></span>
+      </div>
+      <button type="submit">Register</button>
+    </form>
+  </div>
+
+</div>
+
+<!-- <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.15.0/jquery.validate.min.js'></script><script  src="./script.js"></script> -->
+
+</body>
+</html>
