@@ -1,0 +1,178 @@
+html{
+    height: 100%;
+}
+body{
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: #000105;
+}
+
+p{
+    margin: 5px;
+}
+
+nav{
+    top: 0;text-align: center;
+    display: flex;
+    justify-content: center;
+    color: rgb(30, 27, 27);
+}
+
+nav a{
+    font-family: Prompt;
+    font-weight: bold;
+    color: rgb(234, 233, 241);
+    text-decoration: none;
+    font-size: 25px;
+    margin: 50px;
+    justify-content: space-around;
+}
+
+.navbar{
+    /* background-color: rgb(6, 4, 29); */
+    /* background-color: aqua; */
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    background: linear-gradient(180deg, #010618 45%, rgba(1, 6, 25, 0.5) 80%, rgba(0, 0, 0, 0) 100%);
+    /* background-image: linear-gradient(to bottom, rgb(6, 4, 29) 0%, rgba(6, 4, 29, 0) 100%); */
+}
+
+#header{
+    position: relative;
+}
+
+.header{
+    width: 100%;
+}
+
+.content{
+    display: flex;
+    justify-content: center;
+    margin-top: auto;
+}
+
+.container{
+    margin-top: 7%;
+    padding: 40px;
+    width: 1500px;
+    height: max-content;
+    border-radius: 25px;
+    display: flex;
+    background-color: rgb(32, 32, 45);;
+}
+
+.textbox{
+    color: rgb(234, 233, 241);
+    font-family: Prompt;
+    margin-left: 15px;
+}
+
+.textbox-head{
+    position: relative;
+    width: 1000px;
+    padding-top: 1%;
+    text-align: center;
+    left: 25%;
+    color: rgb(234, 233, 241);
+    font-family: Prompt;
+    font-size: 35px;
+}
+
+.textbox-tittle{
+    font-size: 50px;
+}
+
+.textbox-content{
+    font-size: 22px;
+}
+
+.textbox-content-extras{
+    font-size: 15px;
+}
+
+.container-image{
+    margin-top: 4%;
+    border-radius: 5px;
+    max-height: 720px;
+}
+
+.clip-box{
+    margin-top: 50px;
+    height: 210px;
+    display: flex;
+
+    .clip-box-title{
+        left: 100%;
+        width: 650px;
+        margin: 0;
+        justify-content: center;
+        align-items: center;
+        color: rgb(234, 233, 241);
+        font-family: Prompt;
+        font-size: 35px;
+
+        .clip-box-btn{
+            left: 5%;
+            border-radius: 25px;
+            font-size: 20px;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+            background-color: rgb(234, 233, 241);
+            font-family: Prompt;
+            font-weight: bold;
+            width: 100px;
+            height: 50px;
+            cursor: pointer;
+        }
+    }
+
+    .clip-box-img{
+        height: 100%;
+    }
+}
+
+.footer{
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    width: 100%;
+    bottom: 0;
+    z-index: 1;
+    margin-top: auto;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(18, 17, 23);
+}
+
+.icon{
+    margin: 10px;
+}
+
+.socials{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    font-size: 30px;
+    color: rgb(234, 233, 241);
+}
+
+.footer-text{
+    text-align: center;
+    font-family: Prompt;
+    font-size: 20px;
+    color: rgb(234, 233, 241);
+}
+
+@font-face {
+    font-family: Prompt;
+    src: url(/Font/Prompt/Prompt-Light.ttf);
+}

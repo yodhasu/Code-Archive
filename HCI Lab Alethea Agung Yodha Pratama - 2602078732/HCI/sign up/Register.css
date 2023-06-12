@@ -1,0 +1,568 @@
+@keyframes load{
+  0% {opacity: 0%;}
+  100% {opacity: 100%;}
+}
+
+body{
+  background-color: #000105;
+  /* background-color: #000105; */
+}
+
+div{
+  opacity: 100%;
+  animation-name: load;
+  animation-duration: 1.25s;
+}
+
+.animate {
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+}
+.text-center {
+  text-align: center;
+}
+.pull-left {
+  float: left;
+}
+.pull-right {
+  float: right;
+}
+.clearfix:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
+}
+.clearfix {
+  display: inline-block;
+}
+/* start commented backslash hack \*/
+* html .clearfix {
+  height: 1%;
+}
+.clearfix {
+  display: block;
+}
+/* close commented backslash hack */
+a {
+  color: rgb(234, 233, 241);
+}
+
+input:-webkit-autofill {
+  box-shadow: 0 0 0 1000px white inset !important;
+}
+
+button {
+  cursor: pointer;
+  background: rgb(234, 233, 241);
+  text-decoration: none;
+  width: 200px;
+  border-radius: 25px;
+  font-weight: bold;
+  padding: 10px 20px;
+  color: rgb(30, 27, 27);
+  font-family: Prompt;
+  font-size: 20px;
+}
+.validate {
+  width: 75%;
+  margin: auto;
+  text-align: left;
+  display: block;
+  padding: 0px;
+  color: rgb(255, 0, 0);
+  box-sizing: border-box;
+  font-size: 14px;
+  margin-top: 0px;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  -webkit-animation: tooltipanimation 0.3s 1;
+  animation: tooltipanimation 0.3s 1;
+}
+.input-group {
+  color: rgb(234, 233, 241);
+  font-family: Prompt;
+  position: relative;
+  margin-bottom: 50px;
+  align-items: center;
+}
+.input-group label{
+  position: absolute;
+  font-family: Prompt;
+  top: 9px;
+  left: 65px;
+  font-size: 16px;
+  color: rgb(234, 233, 241);
+  font-weight: normal;
+  padding: 2px 5px;
+  z-index: 5;
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+}
+.input-group input {
+  color: rgb(234, 233, 241);
+  font-family: Prompt;
+  outline: none;
+  display: block;
+  margin: auto;
+  width: 75%;
+  height: 40px;
+  position:relative;
+  z-index: 2;
+  border-style:solid;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  padding: 10px 10px;
+  /* background: #ffffff; */
+  box-sizing: border-box;
+  font-weight: 400;
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
+  animation-name: load;
+  animation-duration: 1.25s;
+}
+
+/* .input-group input:focus{
+  background: #00A885;
+  width: 0;
+  height: 2px;
+  display: inline-block;
+  position: absolute;
+  top: 40px;
+  left: 0;
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+} */
+
+/* .input-group.focused .lighting {
+  width: 50%;
+} */
+
+
+/* .input-group input,
+.input-group label{
+  -webkit-transition: all .2s;
+	transition: all .2s;
+	font-size: 15px;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 400;
+} */
+
+.input-group input:not(:placeholder-shown) + label,
+.input-group input:focus + label{
+  /* background: #fff; */
+  font-size: 12px;
+  top: -8px;
+  left: 65px;
+  color: rgb(234, 233, 241);
+  cursor: text;
+}
+
+.input-group input::placeholder{
+  color: transparent;
+}
+
+
+/* .input-group{
+  background: #fff;
+  font-size: 12px;
+  top: -8px;
+  left: 65px;
+  color: #38abab;
+  cursor: text;
+} */
+.input-group span.validate-tooltip {
+  margin-top: 0;
+}
+.wrapper {
+  width: 750px;
+  background-color: rgb(32, 32, 45);
+  border-radius: 25px;
+  /* position:relative; */
+  float: inherit;
+  /* background: #fff; */
+  margin: 150px auto;
+  font-family: Prompt;
+  /* border: 1px solid #f3f3f3; */
+}
+.wrapper .inner-warpper {
+  color: rgb(234, 233, 241);
+  border-radius: 25px;
+  padding: 50px 100px 60px;
+  box-shadow: 0px 10px 13px -10px #000000, 0px 12px 15px 5px rgba(0,0,0,0);
+}
+.wrapper .title {
+  margin-top: 0;
+}
+.wrapper .supporter {
+  margin-top: 10px;
+  font-size: 14px;
+  /* color: #8E8E8E; */
+  cursor: pointer;
+}
+
+.wrapper .signup-wrapper {
+  padding: 20px 0px;
+  font-size: 14px;
+}
+.wrapper .signup-wrapper a {
+  text-decoration: none;
+  color: rgb(234, 233, 241);
+}
+.wrapper .signup-wrapper a:hover {
+  text-decoration: underline;
+}
+/* @-webkit-keyframes tooltipanimation {
+  from {
+    margin-top: -28px;
+  }
+  to {
+    margin-top: 0;
+  }
+}
+@keyframes tooltipanimation {
+  from {
+    margin-top: -28px;
+  }
+  to {
+    margin-top: 0;
+  }
+} */
+@media (max-width: 480px) {
+  .direction {
+    position: static;
+  }
+}
+
+.text-left{
+  color: rgb(234, 233, 241);
+  position: relative;
+  margin-bottom: 50px;
+  text-align: left;
+  left: 12%;
+}
+
+.text-left-error{
+  width: 75%;
+  text-align: left;
+  display: block;
+  padding: 0px;
+  color: rgb(255, 0, 0);
+  box-sizing: border-box;
+  font-size: 14px;
+  margin-top: 0px;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  -webkit-animation: tooltipanimation 0.3s 1;
+  animation: tooltipanimation 0.3s 1;
+}
+
+.radio-button {
+  color: rgb(234, 233, 241);
+  cursor: pointer;
+  padding-right: 30px;
+}
+input[type=radio] {
+    box-sizing: border-box;
+    padding: 0;
+}
+
+input {
+    font-size: 1rem;
+    line-height: 1.5;
+    padding: 15px 23px;
+    border: 1px solid rgba(0, 0, 0, 20);
+    border-radius: 0;
+    outline: 0;
+    background-color: transparent;
+}
+
+.radio-button__input {
+    opacity: 0;
+    position: absolute;
+}
+
+.radio-button__control {
+    position: relative;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+    background-color: inherit;
+    color: rgb(234, 233, 241);
+    border: 2px solid rgb(234, 233, 241);
+    border-radius: 24px;
+}
+
+.radio-button__input:checked+.radio-button__control:after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: 10px;
+    height: 10px;
+    background-color: rgb(234, 233, 241);
+    border-radius: 12px;
+}
+
+.radio-button__input:checked+.radio-button__control {
+    border-color: rgb(234, 233, 241);
+}
+
+.radio-button__control {
+  transform: scale(0.75);
+}
+
+.login{
+  margin: 0px 20px;
+}
+
+label,
+footer {
+    font-family: sans-serif;
+}
+
+label {
+    font-size: 1rem;
+    padding-right: 10px;
+    margin-bottom: 20px;
+}
+
+select {
+  display: block;
+  width: 75%;
+  border-radius: 5px;
+  border:solid rgb(234, 233, 241) 1.75px;
+  font-size: 17px;
+  padding: 5px 8px;
+}
+
+/* Navbar container */
+.navbar {
+  overflow: hidden;
+  background-color: rgb(255, 255, 255);
+  font-family: Arial;
+  box-shadow: 0px 10px 13px -13px #000000, 0px 10px 13px -15px rgba(0,0,0,0);  }
+
+/* Links inside the navbar */
+.navbar a {
+  font-weight: bold;
+  font-size: 16px;
+  text-align: right;
+  display: flexbox;
+  text-decoration: none;
+  color: #000000;
+  padding: 25px 0px;
+  margin: 0px 30px;
+  float: right;
+  position: relative;
+  opacity: 0.75;
+  
+}
+
+.navbarcontent{
+  border: none;
+  padding: 0px 20px;
+  animation-name: dropdown;
+  animation-duration: 500ms;
+  transform-origin: top;
+}
+
+/* The dropdown container */
+.dropdown {
+  float: right;
+  overflow: hidden;
+  margin: 0px 30px;
+}
+
+/* Dropdown button */
+.dropdown .dropbtn {
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  outline: none;
+  color: black;
+  padding: 25px 0px;
+  background-color: inherit;
+  font-family: inherit; /* Important for vertical align on mobile phones */
+  margin: 0; /* Important for vertical align on mobile phones */
+}
+
+
+/* Dropdown content (hidden by default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  height: fit-content;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  animation-name: dropdown;
+  animation-duration: 500ms;
+  transform-origin: top;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 15px 15px;
+  margin: 0px 15px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+/* Add a grey background color to dropdown links on hover */
+.dropdown-content a:hover {
+  color: #38abab;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.nav-link:hover {
+  opacity: 1;
+}
+
+.nav-link::before {
+  transition: 300ms;
+  height: 5px;
+  content: "";
+  position: absolute;
+  background-color: #38abab;
+}
+
+.nav-link-ltr::before {
+  width: 0%;
+  bottom: 10px;
+}
+
+.nav-link-ltr:hover::before {
+  width: 100%;
+}
+
+.content{
+  text-align: center;
+  color: #f9f9f9;
+}
+
+.loginbutton{
+background-color: #38abab;
+border: none;
+float: right;
+color: white;
+padding: 9px 22px;
+text-align: center;
+text-decoration: none;
+display: block;
+font-size: 15px;
+margin: 17px 20px;
+border-radius: 25px;
+cursor: pointer;
+width: auto;
+}
+
+.loginbutton:hover{
+transition: 300ms;
+filter: brightness(75%);
+}
+
+.logo{
+  position: absolute;
+  opacity: 100%;
+  margin-bottom: 10px;
+  height: 30%;
+  width: 30%;
+  animation-name: dropdown;
+  animation-duration: 500ms;
+  transform-origin: top;
+  /* margin-bottom: 10px;
+  margin-left: 5px; */
+}
+
+@keyframes opacity{
+  0% {opacity: 0%;}
+  100% {opacity: 100%;}
+}
+
+@keyframes dropdown {
+  0% {
+      transform: scaleY(0)
+  }
+  80% {
+      transform: scaleY(1.1)
+  }
+  100% {
+      transform: scaleY(1)
+  }
+}
+
+@keyframes footer {
+  0% {
+      height: 0%;
+  }
+  100% {
+      height: 10%;
+  }
+}
+
+.footer{
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 10%;
+  background-color: #fff;
+  box-shadow: 10px 10px 13px 10px #000000, 10px 10px 13px 10px rgba(0,0,0,0);
+  text-align: center;
+  font-size: 25px;
+  animation: footer;
+  opacity: 100%;
+  animation-duration: 1000ms;
+  z-index: 10;
+  /* animation-direction: alternate; */
+
+}
+
+.footercontent{
+  color: black;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  text-align: center;
+}
+
+
+.fa {
+  padding: 20px 3px 10px;
+  font-size: 30px;
+  width: 25px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+}
+
+.fa-twitter {
+  color: rgb(28, 28, 48);
+}
+
+.fa-instagram {
+  color: rgb(28, 28, 48);
+}
+
+.fa-facebook {
+  color: rgb(28, 28, 48);
+}
+
+
+@font-face {
+  font-family: Prompt;
+  src: url(/Font/Prompt/Prompt-Light.ttf);
+}

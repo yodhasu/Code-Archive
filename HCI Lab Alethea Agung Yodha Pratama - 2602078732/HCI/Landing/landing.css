@@ -1,0 +1,178 @@
+html{
+    height: 100%;
+}
+
+body{
+    min-height: 100vh;
+    display: flexbox;
+    flex-wrap: wrap;
+    flex-direction: column;
+    background: url("/Assets/across_the_spider-verse.jpg") no-repeat center center fixed;
+    background-size: cover;
+    background-color: #2c2c3d;
+    background-blend-mode: multiply;
+    margin: 0;
+}
+
+
+.align{
+    padding: 20px;
+    display: flex;
+    margin: auto;
+    width: 50%;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    margin-bottom: 5%;
+}
+
+.textbox{
+    margin: 10px;
+    text-align: center;
+    color: rgb(234, 233, 241);
+    font-family: Prompt;
+    font-weight: lighter;
+    font-size: 18px;
+}
+
+.moto{
+    margin: 5px;
+    text-align: center;
+    color: rgb(234, 233, 241);
+    font-family: Prompt;
+    height: fit-content;
+    font-weight: lighter;
+    font-size: 25px;
+}
+
+.btn{
+    text-decoration: none;
+    border-radius: 25px;
+    font-size: 25px;
+    padding-top: 10px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(234, 233, 241);
+    color: rgb(30, 27, 27);
+    font-family: Prompt;
+    font-weight: bold;
+    width: 150px;
+    height: 50px;
+    cursor: pointer;
+}
+
+.content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    height: fit-content;
+    grid-gap: 50px;
+}
+
+.container{
+    padding: 20px;
+    width: 1500px;
+    height: 350px;
+    border-radius: 25px;
+    display: flex;
+    background-color: rgb(32, 32, 45);
+}
+
+.textbox{
+    display: flex;
+    flex-wrap: wrap;
+    color: rgb(234, 233, 241);
+    font-family: Prompt;
+}
+
+.textbox-head{
+    width: 1000px;
+    padding-top: 5%;
+    left: 25%;
+    color: rgb(234, 233, 241);
+    font-family: Prompt;
+    font-size: 35px;
+}
+
+.textbox-tittle{
+    margin-top: 0px;
+    margin-left: 15px;
+    margin-bottom: 5px;
+    font-size: 50px;
+}
+
+.textbox-content{
+    text-align: left;
+    margin: 15px;
+    font-size: 22px;
+}
+
+.textbox-content-extras{
+    margin-left: 15px;
+    text-align: left;
+    margin-right: 15px;
+    margin-top: 5px;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.container-image{
+    border-radius: 5px;
+    max-height: 95%;
+}
+
+.footer{
+    display: flex;
+    margin-top: 5%;
+    flex-direction: column;
+    flex-shrink: 0;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    padding-top: auto;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(18, 17, 23);
+}
+
+footer{
+    display: flex;
+    flex-shrink: 0;
+    width: 100%;
+    bottom: 0;
+    z-index: 1;
+    margin-top: auto;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(18, 17, 23);
+}
+
+.icon{
+    margin: 10px;
+}
+
+.socials{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    font-size: 30px;
+    color: rgb(234, 233, 241);
+}
+
+.footer-text{
+    text-align: center;
+    font-family: Prompt;
+    font-size: 20px;
+    color: rgb(234, 233, 241);
+}
+
+@font-face {
+    font-family: Prompt;
+    src: url(/Font/Prompt/Prompt-Light.ttf);
+}

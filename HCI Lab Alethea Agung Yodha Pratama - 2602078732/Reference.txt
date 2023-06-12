@@ -1,0 +1,3 @@
+References:
+  1. https://discourse.webflow.com/t/play-pause-restart-html5-videos-based-on-visibility/147845 (Javascript for Jumbotron on Movie Page)
+  2. My own old projects for the sign up page 

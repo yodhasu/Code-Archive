@@ -1,0 +1,2 @@
+// References:
+  // https://discourse.webflow.com/t/play-pause-restart-html5-videos-based-on-visibility/147845
