@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
+#include <ctype.h>
 
 struct backpack{
 	char itemID[100];
@@ -9,9 +10,9 @@ struct backpack{
 	struct backpack *prev;
 } *head, *tail, *curr;
 
-void inputItem(char item[]){
+void inputItem(char item[], int amm){
 	struct backpack *newItem = (struct backpack*) malloc(sizeof(struct backpack));
-	newItem->val = 1;
+	newItem->val = amm;
 	strcpy(newItem->itemID, item);
 	
 	if(head == NULL){
@@ -31,7 +32,7 @@ void inputItem(char item[]){
 			}
 		}
 		if(strcmp(curr->itemID, item) == 0){
-			curr->val++;
+			curr->val += amm;
 		}
 		else{
 			tail->next = newItem;
@@ -39,13 +40,7 @@ void inputItem(char item[]){
 			tail = newItem;
 			tail->next = NULL;
 		}
-	}/*
-	else{
-		tail->next = newItem;
-		newItem->prev = tail;
-		tail = newItem;
-		tail->next = NULL;
-	}*/
+	}
 }
 /*
 void addAmmount(char item[]){
@@ -108,30 +103,38 @@ void delTail(){
 	}
 }
 
-void delSelect(char item[]){
+int delSelect(char item[]){
+	int deleted = 0;
 	curr = head;
 	while(strcmp(curr->itemID, item) != 0){
 		curr = curr->next;
 		if(curr == NULL){
-			printf("Item not exist!\n");
-			break;
+			return deleted;
 		}
 	}
-	if(head == tail){
-		free(head);
-		free(tail);
+	if (curr->val > 1){
+		curr->val -= 1;
+	} else{
+		if(head == tail){
+			free(head);
+			free(tail);
+			head = NULL;
+			tail = NULL;
+			
+		}
+		else if(curr == head){
+			delHead();
+		}
+		else if(curr == tail){
+			delTail();
+		}
+		else{
+			//struct backpack *del = curr;
+			curr->prev->next = curr->next;
+			free(curr);
+		}
 	}
-	else if(curr == head){
-		delHead();
-	}
-	else if(curr == tail){
-		delTail();
-	}
-	else{
-		//struct backpack *del = curr;
-		curr->prev->next = curr->next;
-		free(curr);
-	}
+	return deleted = 1;
 }
 
 
@@ -189,13 +192,18 @@ int main(){
 	openBackpack();
 	*/
 	
-	int input = 0;
+	int delstatus;
+	int input;
 	int count = 0;
 	int open = 0;
 	int flag = 0;
 	char itemID[100];
+	int itemAmmount;
 	
 	do{
+		if(count == 20){
+			puts("Backpack is full!");
+		}
 		printf("Backpack menu:\n");
 		if(flag == 0){
 			openBackpack(open);
@@ -209,11 +217,27 @@ int main(){
 		scanf("%d", &input);
 		switch(input){
 			case 1:
+				if (count == 20){
+					puts("Backpack is full!"); getchar();
+					break;
+				}
 				printf("Input item ID: ");
 				scanf("%s", &itemID);getchar();
-				inputItem(itemID);
+				for (int i = 0; i < strlen(itemID); i++){
+					itemID[i] = tolower(itemID[i]);
+				}
+				printf("Input ammount: ");
+				scanf("%d", &itemAmmount);
+				count = count + itemAmmount;
+				if (count > 20){
+					printf("Input failed! Backpack is full!");
+					count -= itemAmmount;
+					getchar();
+					break;
+				}
+				inputItem(itemID, itemAmmount);
 				printf("Item added!\n");
-				count++;
+				
 				getchar();
 				break;
 			case 2:
@@ -227,13 +251,24 @@ int main(){
 				}
 				break;
 			case 3:
+				if (count == 0){
+					puts("Backpack is empty!"); getchar();
+					
+					break;
+				}
 				printf("Input item ID: ");
 				scanf("%s", &itemID);getchar();
-				delSelect(itemID);
-				printf("Item deleted!\n");
-				count--;
-				getchar();
-				break;
+				delstatus = delSelect(itemID);
+				if (delstatus != 0){
+					puts("Item deleted!");
+					count--;
+					getchar();
+					break;
+				} else{
+					puts("Item not exist!");
+					getchar();
+					break;
+				}
 			case 4:
 				if(flag == 0){
 					flag = 1;
@@ -250,10 +285,8 @@ int main(){
 		}
 		system("cls");
 		
-	}while(input != 5 and count != 20);
-	if(count == 20){
-		printf("Backpack is full!");
-	}
+	}while(input != 5);
+	
 	
 	return 0;
 }
