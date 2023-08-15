@@ -1,6 +1,6 @@
 # Personal Encrypt/Decrypt program
 
-I think it would be cool if I make a program to encrypt a message and decrypt it again, useful if you want to do some sussy stuff like secretly communicating with local drug dealers for example. The program use my own encryption method so any string that is encrypted using this program can only decrypted using this program (unless if you're smart enough to crack my own encryption method, it's easy tho)
+This is a simple symmetric encryption program to encrypt a string.
 
 To use you can simply download the protoEncryptor folder the exe file is already there.
 
