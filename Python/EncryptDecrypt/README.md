@@ -2,7 +2,7 @@
 
 This is a simple symmetric encryption program to encrypt a string.
 
-To use you can simply download the protoEncryptor folder the exe file is already there.
+To use you can simply download the .exe file.
 
 ## Guide on How to Use
 
