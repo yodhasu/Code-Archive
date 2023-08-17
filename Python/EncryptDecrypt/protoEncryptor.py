@@ -266,54 +266,43 @@ while (True):
     if flag == 0:
         write = input("Write to output file? (Y/y)").lower()
 
-        if write == "y" and num == "1":
+        if write == "y":
             dir_change = input("Change output file directory? (Y/y)").lower()
             name_change = input("Change output file name? (Y/y)").lower()
-                    
             if dir_change == "y":
                 print("Default directory: "+default)
                 default = input("New directory  : ")
 
+            
             if name_change == "y":
                 print("Default name: "+namedef_enc)
                 namedef_enc = input("New file name  : ")
             
-            outfile = open(default+namedef_enc, 'a', encoding='utf-8')
-            outfile.write("============================="+"\n")
-            #outfile.write("String           :  "+char+"\n")
-            outfile.write("Encryption key   :  "+''.join(str(key).replace('[', '').replace(']', '').replace(',', ''))+"\n")
-            #print("Encrypted string :   "+''.join(real))1
-            outfile.write("Encrypted string :  "+''.join(encrypted)+"\n")
-            outfile.write("============================="+"\n")
-            print("Output file edited!")
-            input("Press enter to continue...")
-            outfile.close()
+            if num == "1":
+                outfile = open(default+namedef_enc, 'a', encoding='utf-8')
 
+                outfile.write("============================="+"\n")
+                #outfile.write("String           :  "+char+"\n")
+                outfile.write("Encryption key   :  "+''.join(str(key).replace('[', '').replace(']', '').replace(',', ''))+"\n")
+                #print("Encrypted string :   "+''.join(real))1
+                outfile.write("Encrypted string :  "+''.join(encrypted)+"\n")
+                outfile.write("============================="+"\n")
+                print("Output file edited!")
+                input("Press enter to continue...")
+                outfile.close()
 
-        elif write == "y" and num == "2":
-            dir_change = input("Change output file directory? (Y/y)").lower()
-            
-            if dir_change == "y" and write == "y":
-                print("Default directory: "+default)
-                default = input("New directory  : ")
-            
-            
-            name_change = input("Change output file name? (Y/y)").lower()
-            
-            if name_change == "y" and write == "y":
-                print("Default name: "+namedef_dec)
-                namedef_dec = input("New file name  : ")
-            outfile = open(default+namedef_dec, 'a', encoding='utf-8')
+            else:
+                outfile = open(default+namedef_dec, 'a', encoding='utf-8')
 
-            outfile.write("============================="+"\n")
-            #outfile.write("String           :  "+char+"\n")
-            outfile.write("Encryption key   :  "+''.join(str(decrypt_key).replace('[', '').replace(']', '').replace(',', ''))+"\n")
-            outfile.write("Decrypted string :  "+''.join(decrypted)+"\n")
-            
-            outfile.write("============================="+"\n")
-            print("Output file edited!")
-            input("Press enter to continue...")
-            outfile.close()
+                outfile.write("============================="+"\n")
+                #outfile.write("String           :  "+char+"\n")
+                outfile.write("Encryption key   :  "+''.join(str(decrypt_key).replace('[', '').replace(']', '').replace(',', ''))+"\n")
+                outfile.write("Decrypted string :  "+''.join(decrypted)+"\n")
+                
+                outfile.write("============================="+"\n")
+                print("Output file edited!")
+                input("Press enter to continue...")
+                outfile.close()
 
         else:
             choice = input("Rerun? (Y/y)").lower()
