@@ -268,12 +268,13 @@ while (True):
 
         if write == "y" and num == "1":
             dir_change = input("Change output file directory? (Y/y)").lower()
-            if dir_change == "y" and write == "y":
+            name_change = input("Change output file name? (Y/y)").lower()
+                    
+            if dir_change == "y":
                 print("Default directory: "+default)
                 default = input("New directory  : ")
 
-            name_change = input("Change output file name? (Y/y)").lower()
-            if name_change == "y" and write == "y":
+            if name_change == "y":
                 print("Default name: "+namedef_enc)
                 namedef_enc = input("New file name  : ")
             
