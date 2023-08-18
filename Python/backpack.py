@@ -32,6 +32,17 @@ def input_item(item, amm):
             tail = new_item
             tail.next = None
 
+def searchItems(itemID):
+    status = 1
+    curr = head
+    while curr.itemID != itemID:
+        if curr.next is None:
+            return status, None, None
+        curr = curr.next
+    if curr.itemID == itemID:
+        status = 0
+        return status, curr.itemID, curr.val
+
 
 def del_all():
     global head, curr
@@ -71,17 +82,15 @@ def del_tail():
             tail.next = None
 
 
-def del_select(item):
+def del_select(item, ammount):
     global head, tail, curr
-    deleted = 0
     curr = head
+
     while curr.itemID != item:
         curr = curr.next
-        if curr is None:
-            return deleted
 
-    if curr.val > 1:
-        curr.val -= 1
+    if curr.val - ammount > 0:
+        curr.val -= ammount
     else:
         if head == tail:
             del head
@@ -95,8 +104,6 @@ def del_select(item):
         else:
             curr.prev.next = curr.next
             del curr
-    return 1
-
 
 def open_backpack(open_val):
     global head, tail, curr
@@ -198,19 +205,32 @@ while True:
                 input("Menu not available, canceling deletion...")
                 continue
 
-            if select != 1:
+            if select == 2:
                 del_all()
                 input("Backpack cleared!")
+                count = 0
                 continue
             
-            else:
+            elif select == 1:
                 itemID = input("Input item ID: ").lower()
-                del_status = del_select(itemID)
-                if del_status != 0:
-                    input("Item deleted!")
-                    count -= 1
+                search, curritems, currval = searchItems(itemID)
+                if search != 0:
+                    input("Item not exist")
+                    continue
+                print("Item ID:", curritems)
+                print("Ammount in backpack:", currval)
+                try:
+                    itemAmmount = int(input("Input item ammount: "))
+                except:
+                    input("Item ammount must be in integer!")
+                if currval - itemAmmount > 0:
+                    count -= itemAmmount
                 else:
-                    input("Item not exist!")
+                    count -= currval
+                del_status = del_select(itemID, itemAmmount)
+                input("Item deleted!") 
+            else:
+                continue
     elif input_val == 4:
         flag = 1 if flag == 0 else 0
     elif input_val == 5:
