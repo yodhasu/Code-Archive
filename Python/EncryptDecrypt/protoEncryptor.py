@@ -304,13 +304,6 @@ while (True):
                 input("Press enter to continue...")
                 outfile.close()
 
-        else:
-            choice = input("Rerun? (Y/y)").lower()
-            if choice == "y":
-                os.system('cls')
-                continue
-            else:
-                break
     else:
         choice = input("Rerun? (Y/y)").lower()
         if choice == "y":
