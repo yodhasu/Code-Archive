@@ -1,5 +1,6 @@
 import random as rd
 import os
+from subprocess import call
 
 # 0.0.1
 # def encrypt(arr, length, key):
@@ -168,6 +169,9 @@ import os
 
 # 0.0.2
 
+def clearScreen():
+	_ = call('clear' if os.name == 'posix' else 'cls')
+
 def encrypt(arr, length, key):
     for i in range(length):
         if arr[i] != 32 and arr[i] != 46 and arr[i] != 44 and arr[i] != 63:
@@ -208,7 +212,7 @@ symbols = "!\\#$%^&*()_-+=<>:|\{[]}~`"
 
 
 while (True):
-    os.system('cls')
+    clearSceen()
     flag = 0
     print("=============================")  
     print("Encrypt/Decrypt string")
@@ -307,7 +311,6 @@ while (True):
     else:
         choice = input("Rerun? (Y/y)").lower()
         if choice == "y":
-            os.system('cls')
             continue
         else:
             break
