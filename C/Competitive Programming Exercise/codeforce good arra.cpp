@@ -45,7 +45,7 @@ int main()
     int cases, len;
     
     
-    printf("Input case ");
+    //printf("Input case ");
     scanf("%d", &cases);
     
     for(int i = 1; i <= cases; i++){
@@ -66,32 +66,32 @@ int main()
 		}
         //arrb = newArr(arra, len);
         newArr(arra, arrb, len);
-        printf("Case %d:\n", i);
-        printf("Array A: ");
-        for(int j = 0; j < len; j++){
-            printf("%d ", arra[j]);
-        }
-        puts("");
-        printf("Sum of array A: %d\n", sum(arra, len));
-        puts("");
-        printf("Array B: ");
-        for(int j = 0; j < len; j++){
-            printf("%d ", arrb[j]);
-        }
-        puts("");
-        printf("Sum of array B: %d\n", sum(arrb, len));
-        puts("");
+//        printf("Case %d:\n", i);
+//        printf("Array A: ");
+//        for(int j = 0; j < len; j++){
+//            printf("%d ", arra[j]);
+//        }
+//        puts("");
+//        printf("Sum of array A: %d\n", sum(arra, len));
+//        puts("");
+//        printf("Array B: ");
+//        for(int j = 0; j < len; j++){
+//            printf("%d ", arrb[j]);
+//        }
+//        puts("");
+//        printf("Sum of array B: %d\n", sum(arrb, len));
+//        puts("");
         
         int delta = sum(arra, len) - sum(arrb, len);
         remakeArr(arra, arrb, delta, len);
-        printf("Remake Array B: ");
-        for(int j = 0; j < len; j++){
-            printf("%d ", arrb[j]);
-        }
-        puts("");
-        printf("Sum of array B remake: %d\n", sum(arrb, len));
-        puts("");
-        printf("Check for good arrays\n");
+//        printf("Remake Array B: ");
+//        for(int j = 0; j < len; j++){
+//            printf("%d ", arrb[j]);
+//        }
+//        puts("");
+//        printf("Sum of array B remake: %d\n", sum(arrb, len));
+//        puts("");
+//        printf("Check for good arrays\n");
         int goodarr = checker(arra, arrb, len);
         if(goodarr != 1 && sum(arra, len) == sum(arrb, len)) puts("Yes");
         else puts("No");
@@ -99,4 +99,3 @@ int main()
 
     return 0;
 }
-
