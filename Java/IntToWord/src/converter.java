@@ -11,7 +11,7 @@ public class converter {
         BigInteger num = divAndRem[1];
         
         if (!num.equals(BigInteger.ZERO)) {
-          // String group = specialCase(langcode, num, numNames, tensNames, thousandNames);
+          // String group = specialCase();
           String group = convert(num, numNames, tensNames) + thousandNames[count];
           result = group + result;
         }
