@@ -38,7 +38,7 @@ public class converter {
     } if (num == 0) return numwords; 
     return numNames[num] + " hundred" + numwords;
   }
-  // public String specialCase(String langcode, BigInteger num, String numNames[], String[] tensNames, String[] thousandNames){
+  // public String specialCase(){
   //   // Message me to unock
   // }
 }
