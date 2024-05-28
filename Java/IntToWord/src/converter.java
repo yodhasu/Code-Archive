@@ -11,6 +11,7 @@ public class converter {
         BigInteger num = divAndRem[1];
         
         if (!num.equals(BigInteger.ZERO)) {
+          // String group = specialCase(langcode, num, numNames, tensNames, thousandNames);
           String group = convert(num, numNames, tensNames) + thousandNames[count];
           result = group + result;
         }
@@ -23,7 +24,7 @@ public class converter {
 
   private static String convert(BigInteger number, String numNames[], String[] tensNames) {
     String numwords;
-    BigInteger[] divAndRem = number.divideAndRemainder(BigInteger.valueOf(100));
+    BigInteger[] divAndRem = number.divideAndRemainder(BigInteger.valueOf(1000));
     int num = divAndRem[1].intValue();
     if (num % 100 < 20){ 
         numwords = numNames[num % 100]; 
@@ -37,6 +38,9 @@ public class converter {
     } if (num == 0) return numwords; 
     return numNames[num] + " hundred" + numwords;
   }
+  // public String specialCase(String langcode, BigInteger num, String numNames[], String[] tensNames, String[] thousandNames){
+  //   // Message me to unock
+  // }
 }
 
 // HOW IT WORKS:
