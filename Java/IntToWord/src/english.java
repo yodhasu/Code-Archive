@@ -1,7 +1,8 @@
 import java.math.BigInteger;
 
 public class english extends converter{
-
+    private final String lang = "en"; 
+    
     private static final String[] tensNames = {
         "",
         " ten",
@@ -63,6 +64,6 @@ public class english extends converter{
       };
       
       public void convert(BigInteger number){
-        System.out.println(convertToString(number, numNames, tensNames, thousandNames));
+        System.out.println(convertToString(lang, number, numNames, tensNames, thousandNames));
       }
 }
