@@ -8,7 +8,14 @@ public class Main{
         Scanner input = new Scanner(System.in);
 
         print("Input a number");
-        String big_numnum = input.nextLine();
+        try {
+            String big_numnum = input.nextLine();
+            converter(big_numnum, en);
+            input.close();
+        } catch (Exception e) {
+            // TODO: handle exception
+            print("Wrong input datatype");
+        }
 
         converter(big_numnum, en);
         input.close();
