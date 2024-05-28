@@ -2,7 +2,7 @@ import java.math.BigInteger;
 
 public class converter {
 
-  public static String convertToString(BigInteger numbers, String numNames[], String[] tensNames, String[] thousandNames){
+  public static String convertToString(String langcode, BigInteger numbers, String numNames[], String[] tensNames, String[] thousandNames){
     if (numbers.equals(BigInteger.ZERO)) return "zero"; 
     String result = "";
     int count = 0;
