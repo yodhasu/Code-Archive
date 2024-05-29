@@ -1,54 +1,50 @@
 import java.math.BigInteger;
 
-public class converter {
-
-  public static String convertToString(String langcode, BigInteger numbers, String numNames[], String[] tensNames, String[] thousandNames){
-    if (numbers.equals(BigInteger.ZERO)) return "zero"; 
-    String result = "";
-    int count = 0;
-      do{
-        BigInteger[] divAndRem = numbers.divideAndRemainder(BigInteger.valueOf(1000));
-        BigInteger num = divAndRem[1];
-        
-        if (!num.equals(BigInteger.ZERO)) {
-          // String group = specialCase();
-          String group = convert(num, numNames, tensNames) + thousandNames[count];
-          result = group + result;
-        }
-        count++;
-        numbers = divAndRem[0];
-      }while(!numbers.equals(BigInteger.ZERO));
+public class conv{
+    String langcode; 
+    BigInteger inp_num;
     
-    return result.trim();
-  }
+    public String convert(BigInteger numbers, String langcode, String zeros, String[] units, String[] tens, String hundreds, String[] thousands, boolean hypstatus, boolean rule){
+        Dict dictionary = new Dict(langcode, zeros, units, tens, hundreds, thousands, hypstatus, rule);
 
-  private static String convert(BigInteger number, String numNames[], String[] tensNames) {
-    String numwords;
-    BigInteger[] divAndRem = number.divideAndRemainder(BigInteger.valueOf(1000));
-    int num = divAndRem[1].intValue();
-    if (num % 100 < 20){ 
-        numwords = numNames[num % 100]; 
-        num /= 100; 
-    } else { 
-        numwords = numNames[num % 10]; 
-        num /= 10; 
+        String words = "";
+        int groupIndex = 0;
+        if (numbers.equals(BigInteger.ZERO)) {
+            words =  dictionary.zeros;
+        }
+        while (numbers.compareTo(BigInteger.ZERO) > 0) {
+            BigInteger[] divAndRem = numbers.divideAndRemainder(BigInteger.valueOf(1000));
+            BigInteger num = divAndRem[1];
+            String group = convertThreeDigits(num, groupIndex, dictionary, dictionary.hyphen) + dictionary.thousands[groupIndex];
+            words = group + words;
+            numbers = divAndRem[0];
+            groupIndex++;
+        }
+        String finres = rules.checkRules(langcode, words);
+        return finres;
+    }
 
-        numwords = tensNames[num % 10] + numwords;                                          
-        num /= 10; 
-    } if (num == 0) return numwords; 
-    return numNames[num] + " hundred" + numwords;
-  }
-  // public String specialCase(){
-  //   // Message me to unock
-  // }
+    public String convertThreeDigits(BigInteger number, int index, Dict dict, boolean hype){
+        String numwords;
+        BigInteger[] divAndRem = number.divideAndRemainder(BigInteger.valueOf(1000));
+        int num = divAndRem[1].intValue();
+        if (num % 100 < 20){ 
+            numwords = dict.units[num % 100]; 
+            num /= 100; 
+        } else { 
+            numwords = dict.units[num % 10]; 
+            num /= 10; 
+
+            if (hype) {
+                numwords = dict.tens[num % 10] +"-"+numwords.trim();       
+                // numwords.trim();                                   
+                num /= 10; 
+            } else{
+                numwords = dict.tens[num % 10] + numwords;                                          
+                num /= 10; 
+            }
+        } if (num == 0) return numwords; 
+        
+        return dict.units[num] + dict.hundreds + numwords;
+    }
 }
-
-// HOW IT WORKS:
-//   For int less than 1000 basically check that the number is hundreds or not, if hundreds take the hundreds from dictionary (in this case english.java)
-//   using numNames[number % 100]. After that divide by 100 so we get the tens or the units. Do basically the same
-
-//   For int more than 1000 loop until number == 0
-//    Looping process:
-//    1. check input number is not 0
-//    2. group the convert_less_than_1000 and thousandNames dictionary
-//    3. append that into result
